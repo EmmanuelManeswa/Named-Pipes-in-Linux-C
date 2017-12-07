@@ -7,8 +7,7 @@
 #include<sys/stat.h>
 #include<errno.h>
 #include<string.h>
-#include<pthread.h>
-#include<bits/pthreadtypes.h>
+
 
 int main(int argc,char *argv[]){
 
