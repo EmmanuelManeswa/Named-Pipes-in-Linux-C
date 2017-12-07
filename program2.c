@@ -18,7 +18,7 @@ int main(int argc,char *argv[]){
 
 	fd = open("mypipe.tmp",O_RDONLY);
 	write(1,"READ: ",strlen("READ: "));
-	size = read(fd,arr1,100000);
+	size = read(fd,arr1,10000);
 	arr1[size] = '\0';
 	sleep(2);
 	write(1,arr1,size);
