@@ -11,14 +11,14 @@
 
 int main(int argc,char *argv[]){
 
-    char arr1[10000000],arr2[10000000];
+    char arr1[10000],arr2[10000];
     int size,fd;
 
     while(1){
 
 	fd = open("mypipe.tmp",O_RDONLY);
 	write(1,"READ: ",strlen("READ: "));
-	size = read(fd,arr1,10000000);
+	size = read(fd,arr1,100000);
 	arr1[size] = '\0';
 	sleep(2);
 	write(1,arr1,size);
@@ -27,7 +27,7 @@ int main(int argc,char *argv[]){
 
 	fd = open("mypipe.tmp",O_WRONLY);
 	write(1,"WRITE: ",strlen("WRITE: "));
-	fgets(arr2,10000000,stdin);
+	fgets(arr2,10000,stdin);
 	write(fd,arr2,strlen(arr2));
 	close(fd);
 	printf("\n");
